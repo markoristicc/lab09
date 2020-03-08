@@ -12,7 +12,7 @@ int getTest();
 // and does some simple tests of tree methods
 int main() {
 
-    intbst  bst1, bst2;
+    IntBST  bst1, bst2;
 
     // insert data to bst1
     bst1.insert(64);

@@ -4,12 +4,12 @@
 #ifndef INTBST_H
 #define INTBST_H
 
-class intbst {
+class IntBST {
 
 public:
     // ctor, dtor, insert and one print method already done in intbst.cpp:
-    intbst();                   // constructor
-    ~intbst();                  // destructor
+    IntBST();                   // constructor
+    ~IntBST();                  // destructor
     bool insert(int value);     // insert value; return false if duplicate
     void printPreOrder() const; // prints tree data pre-order to cout
 

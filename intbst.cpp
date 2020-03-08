@@ -7,15 +7,15 @@
 using namespace std;
 
 // constructor sets up empty tree
-intbst::intbst() : root(0) { }
+IntBST::IntBST() : root(0) { }
 
 // destructor deletes all nodes
-intbst::~intbst() {
+IntBST::~IntBST() {
     clear(root);
 }
 
 // recursive helper for destructor
-void intbst::clear(Node *n) {
+void IntBST::clear(Node *n) {
     if (n) {
         clear(n->left);
         clear(n->right);
@@ -24,7 +24,7 @@ void intbst::clear(Node *n) {
 }
 
 // insert value in tree; return false if duplicate
-bool intbst::insert(int value) {
+bool IntBST::insert(int value) {
     // handle special case of empty tree first
     if (!root) {
         root = new Node(value);
@@ -35,7 +35,7 @@ bool intbst::insert(int value) {
 }
 
 // recursive helper for insert (assumes n is never 0)
-bool intbst::insert(int value, Node *n) {
+bool IntBST::insert(int value, Node *n) {
     if (value == n->info)
         return false;
     if (value < n->info) {
@@ -57,12 +57,12 @@ bool intbst::insert(int value, Node *n) {
 }
 
 // print tree data pre-order
-void intbst::printPreOrder() const {
+void IntBST::printPreOrder() const {
     printPreOrder(root);
 }
 
 // recursive helper for printPreOrder()
-void intbst::printPreOrder(Node *n) const {
+void IntBST::printPreOrder(Node *n) const {
     if (n) {
         cout << n->info << " ";
         printPreOrder(n->left);
@@ -71,10 +71,10 @@ void intbst::printPreOrder(Node *n) const {
 }
 
 // print tree data in-order, with helper
-void intbst::printInOrder() const {
+void IntBST::printInOrder() const {
     printInOrder(root);
 }
-void intbst::printInOrder(Node *n) const {
+void IntBST::printInOrder(Node *n) const {
     if(n){
 	    printInOrder(n->left);
 	    cout << n->info << " ";
@@ -83,10 +83,10 @@ void intbst::printInOrder(Node *n) const {
 }
 
 // prints tree data post-order, with helper
-void intbst::printPostOrder() const {
+void IntBST::printPostOrder() const {
     printPostOrder(root);
 }
-void intbst::printPostOrder(Node *n) const {
+void IntBST::printPostOrder(Node *n) const {
     if(n){
 	    printPostOrder(n->left);
 	    printPostOrder(n->right);
@@ -95,12 +95,12 @@ void intbst::printPostOrder(Node *n) const {
 }
 
 // return sum of values in tree
-int intbst::sum() const {
+int IntBST::sum() const {
     return sum(root);
 }
 
 // recursive helper for sum
-int intbst::sum(Node *n) const {
+int IntBST::sum(Node *n) const {
    if(n){
 	if(n->right == NULL)
 	    return n->info;
@@ -110,12 +110,12 @@ int intbst::sum(Node *n) const {
 }
 
 // return count of values
-int intbst::count() const {
+int IntBST::count() const {
     return count(root);
 }
 
 // recursive helper for count
-int intbst::count(Node *n) const {
+int IntBST::count(Node *n) const {
     if(n){
 	if(n->right == NULL)
 	    return 1;
@@ -125,10 +125,10 @@ int intbst::count(Node *n) const {
 }
 
 // returns true if value is in the tree; false if not
-bool intbst::contains(int value) const {
+bool IntBST::contains(int value) const {
     return contains(value, root);	    
 }
-bool intbst::contains(int value, Node *n) const {
+bool IntBST::contains(int value, Node *n) const {
     if(n == NULL)
 	    return false;
     else if(n->info == value)
