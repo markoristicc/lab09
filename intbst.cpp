@@ -102,9 +102,7 @@ int IntBST::sum() const {
 // recursive helper for sum
 int IntBST::sum(Node *n) const {
    if(n != NULL){
-	if(n->right == NULL)
-	    return n->info;
-   	 else return n->info + sum(n->left) + sum(n->right);
+   	return n->info + sum(n->left) + sum(n->right);
    }
    else return 0;
 }
@@ -117,9 +115,7 @@ int IntBST::count() const {
 // recursive helper for count
 int IntBST::count(Node *n) const {
     if(n != NULL){
-	if(n->right == NULL)
-	    return 1;
-    	else return 1 + count(n->left) + count(n->right);
+	 return 1 + count(n->left) + count(n->right);
     }
     else return 0;
 }
